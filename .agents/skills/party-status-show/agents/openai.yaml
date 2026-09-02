@@ -1,0 +1,4 @@
+interface:
+  display_name: "Party Status Show"
+  short_description: "Display compact live party mechanics"
+  default_prompt: "Use $party-status-show to display the current party status."

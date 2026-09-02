@@ -1,0 +1,4 @@
+interface:
+  display_name: "Encounter Check"
+  short_description: "Check unsafe rests for contextual threats"
+  default_prompt: "Use $encounter-check to check an unsafe rest for a contextual hostile encounter."

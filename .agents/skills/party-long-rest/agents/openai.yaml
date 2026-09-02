@@ -1,0 +1,4 @@
+interface:
+  display_name: "Party Long Rest"
+  short_description: "Resolve sleep and advance campaign chronology"
+  default_prompt: "Use $party-long-rest to resolve sleep and advance the campaign day."

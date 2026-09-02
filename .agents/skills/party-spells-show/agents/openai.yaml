@@ -1,0 +1,4 @@
+interface:
+  display_name: "Party Spells Show"
+  short_description: "Display party spell lists and slots"
+  default_prompt: "Use $party-spells-show to display a party member spell report."

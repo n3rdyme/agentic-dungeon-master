@@ -1,0 +1,4 @@
+interface:
+  display_name: "Party Member Update"
+  short_description: "Update canonical party-member records safely"
+  default_prompt: "Use $party-member-update to persist an established change to a party member."

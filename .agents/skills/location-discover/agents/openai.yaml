@@ -1,0 +1,4 @@
+interface:
+  display_name: "Location Discover"
+  short_description: "Create canon for a discovered location"
+  default_prompt: "Use $location-discover to record this newly established location."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "NPC Update"
+  short_description: "Persist a change to an existing NPC"
+  default_prompt: "Use $npc-update to record this NPC development."

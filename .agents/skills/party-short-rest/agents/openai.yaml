@@ -1,0 +1,4 @@
+interface:
+  display_name: "Party Short Rest"
+  short_description: "Resolve and record a campaign short rest"
+  default_prompt: "Use $party-short-rest to resolve a short rest for the party."

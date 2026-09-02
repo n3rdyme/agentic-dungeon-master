@@ -1,0 +1,4 @@
+interface:
+  display_name: "Item Consume"
+  short_description: "Consume carried items in story or combat"
+  default_prompt: "Use $item-consume to consume a party member's carried item."

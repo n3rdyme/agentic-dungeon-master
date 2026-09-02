@@ -1,0 +1,4 @@
+interface:
+  display_name: "Story Rules Apply"
+  short_description: "Reload narration and combat-transition rules"
+  default_prompt: "Use $story-rules-apply to re-read and apply the story-mode rules now."

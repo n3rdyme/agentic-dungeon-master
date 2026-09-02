@@ -1,0 +1,4 @@
+interface:
+  display_name: "Party State Update"
+  short_description: "Persist established transient party mechanics"
+  default_prompt: "Use $party-state-update to persist this established transient party-state change."

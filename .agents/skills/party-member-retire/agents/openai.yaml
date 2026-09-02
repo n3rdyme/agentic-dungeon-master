@@ -1,0 +1,4 @@
+interface:
+  display_name: "Party Member Retire"
+  short_description: "Move a party member into retired storage"
+  default_prompt: "Use $party-member-retire to retire this party member."

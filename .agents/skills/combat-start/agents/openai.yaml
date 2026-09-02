@@ -1,0 +1,4 @@
+interface:
+  display_name: "Combat Start"
+  short_description: "Narrate and persist the combat transition"
+  default_prompt: "Use $combat-start to narrate the combat trigger and prepare combat.md for the battle role."

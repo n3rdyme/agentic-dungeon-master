@@ -1,0 +1,4 @@
+interface:
+  display_name: "Party Member Create"
+  short_description: "Build and add a complete party character"
+  default_prompt: "Use $party-member-create to create a complete party member."

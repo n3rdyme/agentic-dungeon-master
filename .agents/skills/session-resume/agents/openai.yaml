@@ -1,0 +1,4 @@
+interface:
+  display_name: "Session Resume"
+  short_description: "Restore campaign context in a new chat"
+  default_prompt: "Use $session-resume to resume the active campaign from its files."

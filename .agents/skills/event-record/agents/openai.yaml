@@ -1,0 +1,4 @@
+interface:
+  display_name: "Event Record"
+  short_description: "Record one notable chronological event"
+  default_prompt: "Use $event-record to persist this notable campaign event."

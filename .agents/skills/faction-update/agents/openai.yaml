@@ -1,0 +1,4 @@
+interface:
+  display_name: "Faction Update"
+  short_description: "Persist faction status and relationship changes"
+  default_prompt: "Use $faction-update to record this faction development."

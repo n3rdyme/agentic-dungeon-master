@@ -1,0 +1,4 @@
+interface:
+  display_name: "Combat Finish"
+  short_description: "Archive combat and apply its consequences"
+  default_prompt: "Use $combat-finish to archive resolved combat.md and resume the story."

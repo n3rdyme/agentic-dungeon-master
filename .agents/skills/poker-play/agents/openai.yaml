@@ -1,0 +1,4 @@
+interface:
+  display_name: "Poker Play"
+  short_description: "Run persistent Holdem and five-card draw"
+  default_prompt: "Use $poker-play to start or continue a poker game."

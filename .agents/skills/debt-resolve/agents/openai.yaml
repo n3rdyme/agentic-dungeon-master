@@ -1,0 +1,4 @@
+interface:
+  display_name: "Debt Resolve"
+  short_description: "Close obligations without payment"
+  default_prompt: "Use $debt-resolve to settle a campaign obligation without ordinary payment."

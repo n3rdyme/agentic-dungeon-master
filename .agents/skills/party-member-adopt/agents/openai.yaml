@@ -1,0 +1,4 @@
+interface:
+  display_name: "Party Member Adopt"
+  short_description: "Promote an allied NPC into the active party"
+  default_prompt: "Use $party-member-adopt to add this allied NPC to the active party."

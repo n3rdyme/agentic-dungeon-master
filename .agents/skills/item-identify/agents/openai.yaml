@@ -1,0 +1,4 @@
+interface:
+  display_name: "Item Identify"
+  short_description: "Record item identification and revealed lore"
+  default_prompt: "Use $item-identify to identify and update this campaign item."

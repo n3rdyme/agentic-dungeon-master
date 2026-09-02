@@ -1,0 +1,4 @@
+interface:
+  display_name: "Dice Roll"
+  short_description: "Roll labeled dice from plain English"
+  default_prompt: "Use $dice-roll to roll d20+5 attack and 3d6 sneak attack."

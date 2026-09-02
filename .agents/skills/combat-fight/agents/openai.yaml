@@ -1,0 +1,4 @@
+interface:
+  display_name: "Combat Fight"
+  short_description: "Run and persist the active combat encounter"
+  default_prompt: "Use $combat-fight to continue the selected campaign's combat.md."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Quest Update"
+  short_description: "Update an existing active quest safely"
+  default_prompt: "Use $quest-update to record this development on an active quest."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Cards Shuffle"
+  short_description: "Create a cryptographically shuffled card deck"
+  default_prompt: "Use $cards-shuffle to create a shuffled 52-card deck."

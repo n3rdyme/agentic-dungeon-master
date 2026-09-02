@@ -1,0 +1,4 @@
+interface:
+  display_name: "Party Inventory Show"
+  short_description: "Display categorized shared party inventory"
+  default_prompt: "Use $party-inventory-show to display the shared party inventory."

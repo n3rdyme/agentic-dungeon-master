@@ -1,0 +1,4 @@
+interface:
+  display_name: "Campaign Validate"
+  short_description: "Normalize Markdown and audit a campaign"
+  default_prompt: "Use $campaign-validate to normalize Markdown and audit the complete campaign store."

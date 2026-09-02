@@ -1,0 +1,4 @@
+interface:
+  display_name: "Campaign Start"
+  short_description: "Create and initialize a new campaign"
+  default_prompt: "Use $campaign-start to begin creating a new campaign."

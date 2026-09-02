@@ -1,0 +1,4 @@
+interface:
+  display_name: "Party Member Validate"
+  short_description: "Audit a character against 2024 rules"
+  default_prompt: "Use $party-member-validate to audit this campaign character."

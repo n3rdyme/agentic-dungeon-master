@@ -1,0 +1,4 @@
+interface:
+  display_name: "NPC Meet"
+  short_description: "Create canon for a significant NPC"
+  default_prompt: "Use $npc-meet to record this significant NPC after the meaningful encounter."

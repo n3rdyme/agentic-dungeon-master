@@ -1,0 +1,4 @@
+interface:
+  display_name: "Campaign Import"
+  short_description: "Import an exported conversation into campaign canon"
+  default_prompt: "Use $campaign-import to import an Anthropic conversation into a new filesystem campaign."

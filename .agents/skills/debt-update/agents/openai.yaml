@@ -1,0 +1,4 @@
+interface:
+  display_name: "Debt Update"
+  short_description: "Revise accepted obligation terms"
+  default_prompt: "Use $debt-update to revise a campaign obligation."

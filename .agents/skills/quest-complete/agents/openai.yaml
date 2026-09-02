@@ -1,0 +1,4 @@
+interface:
+  display_name: "Quest Complete"
+  short_description: "Resolve and archive an active quest"
+  default_prompt: "Use $quest-complete to resolve this active quest."

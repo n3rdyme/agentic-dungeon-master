@@ -1,0 +1,4 @@
+interface:
+  display_name: "Party Level Up"
+  short_description: "Level the party one character at a time"
+  default_prompt: "Use $party-level-up to level up the active party."

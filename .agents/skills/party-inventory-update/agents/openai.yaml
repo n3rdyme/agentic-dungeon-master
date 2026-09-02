@@ -1,0 +1,4 @@
+interface:
+  display_name: "Party Inventory Update"
+  short_description: "Mutate canonical shared party inventory safely"
+  default_prompt: "Use $party-inventory-update to apply an established shared-inventory change."

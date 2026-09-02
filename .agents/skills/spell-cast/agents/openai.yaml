@@ -1,0 +1,4 @@
+interface:
+  display_name: "Spell Cast"
+  short_description: "Resolve roleplay spell use and persist resources"
+  default_prompt: "Use $spell-cast to resolve this spell cast outside combat."

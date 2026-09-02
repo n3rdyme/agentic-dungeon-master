@@ -1,0 +1,4 @@
+interface:
+  display_name: "Quest Receive"
+  short_description: "Create a newly accepted active quest"
+  default_prompt: "Use $quest-receive to record this newly received quest."

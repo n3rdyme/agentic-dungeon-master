@@ -1,0 +1,4 @@
+interface:
+  display_name: "Session End"
+  short_description: "Checkpoint campaign state at session end"
+  default_prompt: "Use $session-end to create a complete campaign checkpoint."

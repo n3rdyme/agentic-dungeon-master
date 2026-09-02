@@ -1,0 +1,4 @@
+interface:
+  display_name: "Item Sell"
+  short_description: "Sell items and persist campaign state"
+  default_prompt: "Use $item-sell to sell these items in the active campaign."

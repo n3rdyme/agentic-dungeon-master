@@ -1,0 +1,4 @@
+interface:
+  display_name: "Debt Pay"
+  short_description: "Pay scheduled campaign obligations"
+  default_prompt: "Use $debt-pay to pay a campaign obligation."

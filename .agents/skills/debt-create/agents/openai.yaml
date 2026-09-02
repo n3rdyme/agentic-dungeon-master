@@ -1,0 +1,4 @@
+interface:
+  display_name: "Debt Create"
+  short_description: "Record accepted financial obligations"
+  default_prompt: "Use $debt-create to record an accepted campaign obligation."

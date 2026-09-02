@@ -1,0 +1,4 @@
+interface:
+  display_name: "Party Member Death"
+  short_description: "Archive a permanently dead party member"
+  default_prompt: "Use $party-member-death to archive this permanently dead party member."

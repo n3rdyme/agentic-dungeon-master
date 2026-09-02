@@ -1,0 +1,4 @@
+interface:
+  display_name: "Milestone Record"
+  short_description: "Record a campaign-defining milestone"
+  default_prompt: "Use $milestone-record to persist this campaign milestone."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Location Update"
+  short_description: "Persist a durable change to the world"
+  default_prompt: "Use $location-update to record this world-state change."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Time Advance"
+  short_description: "Skip campaign time with durable chronology"
+  default_prompt: "Use $time-advance to move the campaign forward by an established interval."

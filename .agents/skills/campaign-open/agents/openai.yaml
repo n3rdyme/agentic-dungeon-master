@@ -1,0 +1,4 @@
+interface:
+  display_name: "Campaign Open"
+  short_description: "Open a campaign and select its role"
+  default_prompt: "Use $campaign-open to open an existing campaign."

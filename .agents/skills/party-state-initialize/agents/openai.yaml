@@ -1,0 +1,4 @@
+interface:
+  display_name: "Party State Initialize"
+  short_description: "Migrate a campaign to canonical transient state"
+  default_prompt: "Use $party-state-initialize to create canonical transient state for this campaign."

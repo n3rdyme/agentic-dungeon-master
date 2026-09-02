@@ -1,0 +1,4 @@
+interface:
+  display_name: "Debt Show"
+  short_description: "Show party financial obligations"
+  default_prompt: "Use $debt-show to display current party financial obligations."

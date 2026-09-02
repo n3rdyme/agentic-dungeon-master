@@ -1,0 +1,4 @@
+interface:
+  display_name: "Item Loot"
+  short_description: "Record acquired loot and campaign changes"
+  default_prompt: "Use $item-loot to record loot acquired by the party."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Party XP Award"
+  short_description: "Award noncombat XP and update campaign state"
+  default_prompt: "Use $party-xp-award to award story XP for this achievement."

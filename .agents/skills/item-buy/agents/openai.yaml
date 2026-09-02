@@ -1,0 +1,4 @@
+interface:
+  display_name: "Item Buy"
+  short_description: "Purchase items and persist campaign state"
+  default_prompt: "Use $item-buy to purchase these items in the active campaign."
