@@ -5,7 +5,7 @@
 - Validate every business directory, required file, ID, setup state, monetary integer, earnings threshold, tier traffic and totals, aggregate staffing positions and cost, aggregate ordinary expenses, discretionary expenses, debt ledger, immutable single-day or non-overlapping range sequence, `day_count`, and ledger arithmetic through `validate-businesses.mjs`.
 - Accept a missing status `day_of_week` only for backward compatibility and warn that `session-resume` will initialize it to Sunday. When present, require one exact weekday name from Sunday through Saturday.
 - Treat a missing status `debts` field as an empty array. When present, require a valid active-debt array, unique ids, valid currency, coherent one-time or recurring schedules, and report overdue obligations as warnings rather than structural errors.
-- Resolve every local Markdown link.
+- Run `node .agents/tools/validate-markdown-links.cjs <campaign-directory>`, follow `link-repair.md` for every reported destination, and rerun it after repairs. Treat every remaining source/destination pair as a structural error, display the JSON report, and prompt the user for resolution evidence rather than guessing.
 - Run `node .agents/tools/markdown-format.mjs <campaign-directory>` once. Let that tool recursively process every `.md` file and enforce spacing deterministically; never inspect or rewrite spacing through LLM judgment.
 - Require party.md to link each active member exactly once.
 - Require one matching hub, detail directory, complete file set, party-state key, strict party-member template, and campaign-level Stats level per member.

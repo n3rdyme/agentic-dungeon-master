@@ -251,10 +251,10 @@ every role.
 
 ### Campaign support
 
-- [`campaign-validate`](skills/campaign-validate/SKILL.md) — Audits complete campaign structure and cross-file consistency.
+- [`campaign-validate`](skills/campaign-validate/SKILL.md) — Repairs unambiguous stale links, then audits complete campaign structure and cross-file consistency.
   - Related skills: [`campaign-start`](skills/campaign-start/SKILL.md), [`party-member-update`](skills/party-member-update/SKILL.md), [`party-member-validate`](skills/party-member-validate/SKILL.md)
-  - References: [`businesses.md`](references/businesses.md), [`calendar.md`](references/calendar.md), [`campaign-info.md`](references/campaign-info.md), [`debts.md`](references/debts.md), [`campaign-checklist.md`](skills/campaign-validate/references/campaign-checklist.md)
-  - Tools: [`markdown-format.mjs`](tools/markdown-format.mjs), [`validate-businesses.mjs`](tools/validate-businesses.mjs), [`validateCampaign.mjs`](skills/campaign-validate/scripts/validateCampaign.mjs), [`validatePartyMember.mjs`](skills/party-member-update/scripts/validatePartyMember.mjs)
+  - References: [`businesses.md`](references/businesses.md), [`calendar.md`](references/calendar.md), [`campaign-info.md`](references/campaign-info.md), [`debts.md`](references/debts.md), [`campaign-checklist.md`](skills/campaign-validate/references/campaign-checklist.md), [`link-repair.md`](skills/campaign-validate/references/link-repair.md)
+  - Tools: [`markdown-format.mjs`](tools/markdown-format.mjs), [`validate-markdown-links.cjs`](tools/validate-markdown-links.cjs), [`validate-businesses.mjs`](tools/validate-businesses.mjs), [`validateCampaign.mjs`](skills/campaign-validate/scripts/validateCampaign.mjs), [`validatePartyMember.mjs`](skills/party-member-update/scripts/validatePartyMember.mjs)
 - [`party-member-validate`](skills/party-member-validate/SKILL.md) — Audits character completeness, mechanics, and rules legality.
   - Related skills: [`party-level-up`](skills/party-level-up/SKILL.md), [`party-member-adopt`](skills/party-member-adopt/SKILL.md), [`party-member-create`](skills/party-member-create/SKILL.md), [`party-member-update`](skills/party-member-update/SKILL.md)
   - References: [`audit-checklist.md`](skills/party-member-validate/references/audit-checklist.md)
