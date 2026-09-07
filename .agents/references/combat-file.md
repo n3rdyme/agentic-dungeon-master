@@ -52,4 +52,4 @@ Rules:
 - Write an initial checkpoint after initiative, one checkpoint at the end of every completed round, and one final checkpoint when resolved. Resolve each round in memory and never persist a partial round.
 - During execution, do not update campaign canon outside `combat.md`. The only other write is the append-only `roll-history.log` produced by `dice-roll`.
 - Record every final party-state, Equipment, and resource delta in Resolution so `combat-finish` can apply it exactly once in story mode.
-- Archive a resolved file by moving it to `log/Combat/<Encounter ID> - <Encounter Name>.md`; never copy it or leave the live file behind.
+- Archive a resolved file by moving it to `log/Combat/<Day> - <Encounter ID> - <Encounter Name>.md`, using the resolved file's exact numeric campaign Day; never copy it or leave the live file behind. The filename must begin with digits followed by ` - `, not `Day <number>`, `DAY<number>`, or `D<number>`.

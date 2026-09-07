@@ -35,7 +35,7 @@ If interrupted, persist only consequences that actually occurred and do not appl
 
 5. Through that transaction, clear only conditions and effects that the rules or established duration end, and reset death saves when applicable.
 
-6. Create one Daily file for the new day.
+6. Create one `log/Daily/<new Day> - <Location>.md` for the new day. The filename must begin with the exact numeric Day followed by ` - `.
 
 Treat a missing `debts` field as `[]`. After incrementing the day, identify payments now due or overdue. Never pay them automatically or treat a reached day as satisfying a condition. Surface a concise natural reminder only when the party knows of the obligation and it is relevant to the waking situation. Never overwrite an existing day, change permanent maxima, or assume every effect ends on a rest.
 

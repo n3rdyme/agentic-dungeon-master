@@ -16,6 +16,6 @@ After the complete preflight passes, apply the resolution exactly once:
 3. Apply every resolved carried-item consumption through `item-consume`, using its verified owner, item, opening value, amount, and expected final value.
 4. Apply established shared loot through `item-loot`, whose inventory writes route through `party-inventory-update`, and add established currency once.
 5. Update the current Daily, quests, and entities where the resolved encounter established a consequence. The archived combat file is the primary detailed encounter log; do not create a redundant Event for the same combat.
-6. Ensure `log/Combat/` exists, then move—not copy—`combat.md` to `log/Combat/<Encounter ID> - <Encounter Name>.md`. Ensure the archive name is filesystem-safe and unique; do not leave a live `combat.md` behind.
+6. Ensure `log/Combat/` exists, then move—not copy—`combat.md` to `log/Combat/<Day> - <Encounter ID> - <Encounter Name>.md`, using the exact numeric `Day` stored in the resolved combat. The archive must begin with digits followed by ` - `; never substitute `Day <number>`, `DAY<number>`, or `D<number>` for that chronology prefix. Ensure the archive name is filesystem-safe and unique; do not leave a live `combat.md` behind.
 
 Resume at the immediate aftermath in second person. Do not display a completion record, file list, XP ledger, or loot ledger unless the player explicitly asks.

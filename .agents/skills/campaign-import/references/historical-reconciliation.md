@@ -51,7 +51,7 @@ In historical-import mode:
 | Party member permanently dies | `party-member-death` |
 | Party member permanently or indefinitely departs alive | `party-member-retire` |
 
-Do not replay historical combat through live combat skills. Archive its established participants, state changes, outcome, XP, and loot directly under `log/Combat` using the imported evidence.
+Do not replay historical combat through live combat skills. Archive its established participants, state changes, outcome, XP, and loot directly under `log/Combat/<creation Day> - <Encounter ID> - <Encounter Name>.md` using the imported evidence. Use the numeric imported campaign Day on which the canonical archive is created as the filename prefix.
 
 ## Entity thresholds
 

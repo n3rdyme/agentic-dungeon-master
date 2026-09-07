@@ -98,8 +98,8 @@ After the Daily entry is complete, reconcile the campaign from that ledger and t
 - Create or update character identity, biography, appearance, personality, and relationships only from established facts.
 - Search names and aliases before creating NPC, location, faction, item, quest, Event, Combat, or Milestone files. Update instead of duplicating.
 - Store current entity state in its canonical file and history in Daily, Event, Combat, or Milestone records. Cross-link rather than copy.
-- Archive resolved historical combats under `log/Combat`; never create a live `combat.md` during import.
-- Record sparse campaign-defining achievements and every noncombat story-XP award or discussion under `log/Milestones`, then apply an explicitly awarded amount to status XP. Do not infer an XP amount.
+- Archive resolved historical combats under `log/Combat/<creation Day> - <Encounter ID> - <Encounter Name>.md`; never create a live `combat.md` during import. Use the numeric imported campaign Day on which the archive record is created even when the encounter's historical occurrence date is uncertain.
+- Record sparse campaign-defining achievements and every noncombat story-XP award or discussion under `log/Milestones/<creation Day> - <Title>.md`, then apply an explicitly awarded amount to status XP. Do not infer an XP amount.
 - Apply `quest-receive`, `quest-update`, and `quest-complete` rules to historical quest receipts, goal progress, and terminal outcomes. Active quest files may exist only in `quests/active`; resolved quest files may exist only in `quests/resolved`; never create quest files directly under `quests`.
 - Record established rules exceptions in `homebrew.md`; do not silently repair legacy mechanics to current rules.
 

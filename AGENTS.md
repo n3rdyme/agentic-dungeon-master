@@ -96,6 +96,7 @@ When a campaign is active or campaign files are explicitly being edited:
   outcomes in chronology when the fiction changes.
 - Use relative Markdown links inside campaigns and write UTF-8 text.
 - Never introduce hard line breaks merely to word-wrap prose in any Markdown file. Store each prose paragraph as one physical line; use newlines only for genuine Markdown structure such as paragraph boundaries, headings, lists, block quotes, tables, and fenced code blocks.
+- Name every non-placeholder file anywhere under `log/` with a numeric chronology prefix for the campaign Day on which it was created. Canonical Markdown records under Daily, Events, Combat, and Milestones use `<Day> - <Title>.md`; only a compressed multi-day Daily may use `<start>-<end> - <Location>.md`. Never use `Day <number> -`, `DAY<number>`, `D<number>`, or an unprefixed log filename. `.gitkeep` is exempt.
 - After creating or updating a campaign Markdown file, run
   `node .agents/tools/markdown-format.mjs "<file-or-directory>"`. Use that deterministic
   tool—not LLM judgment—to insert GitHub-compatible paragraph spacing while

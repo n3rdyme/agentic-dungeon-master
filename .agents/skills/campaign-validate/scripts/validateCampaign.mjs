@@ -94,10 +94,24 @@ for(const f of walk(path.join(q,"resolved"),".md")){
 if(fs.existsSync(path.join(root,["Magic","Items.md"].join(" "))))errors.push("legacy monolithic item ledger exists");
 const dailyLogDir=path.join(root,"log/Daily"),dailyLogFiles=walk(dailyLogDir,".md");
 if(fs.existsSync(dailyLogDir)&&!dailyLogFiles.length)errors.push("log/Daily: no records");
-for(const f of dailyLogFiles){
-  const name=path.basename(f),match=/^(\d+)(?:-(\d+))? - (.+)\.md$/.exec(name);
-  if(!match){errors.push(rel(f)+": filename must use <day> - <Location>.md or <start>-<end> - <Location>.md");continue}
-  if(match[2]&&Number.parseInt(match[2])-Number.parseInt(match[1])<2)errors.push(rel(f)+": range Daily must span at least two skipped days");
+for(const kind of ["Daily","Events","Combat","Milestones"]){
+  const dir=path.join(root,"log",kind);
+  for(const f of walk(dir)){
+    const name=path.basename(f);
+    if(name===".gitkeep")continue;
+    if(!name.endsWith(".md")){errors.push(rel(f)+": canonical log records must be Markdown");continue}
+    if(kind==="Daily"){
+      const match=/^(\d+)(?:-(\d+))? - (.+)\.md$/.exec(name);
+      if(!match){errors.push(rel(f)+": filename must use <Day> - <Location>.md or <start>-<end> - <Location>.md");continue}
+      if(match[2]&&Number.parseInt(match[2])-Number.parseInt(match[1])<2)errors.push(rel(f)+": range Daily must span at least two skipped days");
+    }else if(!/^\d+ - .+\.md$/.test(name))errors.push(rel(f)+": filename must begin with <Day> - ");
+  }
+}
+const logRoot=path.join(root,"log"),canonicalLogKinds=new Set(["Daily","Events","Combat","Milestones"]);
+for(const f of walk(logRoot)){
+  const name=path.basename(f),kind=path.relative(logRoot,f).split(path.sep)[0];
+  if(name===".gitkeep"||canonicalLogKinds.has(kind))continue;
+  if(!/^\d+ - .+/.test(name))errors.push(rel(f)+": filename must begin with <Day> - ");
 }
 const businesses=validateBusinesses(root);errors.push(...businesses.errors);warnings.push(...businesses.warnings);
 errors.forEach(x=>console.error("ERROR: "+x));warnings.forEach(x=>console.warn("WARNING: "+x));

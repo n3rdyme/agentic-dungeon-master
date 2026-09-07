@@ -12,6 +12,6 @@
 - Reject unindexed active directories or party-state characters. Permit an inactive root hub only when it is a valid `Dead` memorial or `Retired` redirect with a matching `party/retired/<Name>/` archive; retired redirects must also link to the canonical NPC record.
 - Require the world-building-only campaign-info.md sections in exact template order and reject transient party, relationship, plot, or current-state headings. When `resume.md` exists, require its sections in exact template order. Treat an absent `resume.md` with an existing `resume.bak` as a valid active-chat state with no warning; reject the campaign when both are absent.
 - Require quests only under active or resolved. Reject `Story XP` fields in active quests and require exactly one numeric `Story XP:` completion award in every resolved quest. Reject legacy item storage.
-- Require items and all four log subdirectories.
+- Require items and all four log subdirectories. Require every non-placeholder file anywhere under `log/` to begin with its numeric creation-Day prefix. Markdown records under Daily, Events, Combat, and Milestones use `<Day> - ` for ordinary records and `<start>-<end> - ` only for a compressed multi-day Daily. Reject `Day <number>`, `DAY<number>`, `D<number>`, and unprefixed names. Ignore `.gitkeep`.
 - Compare party-state membership, HP, and spell-slot maxima with Stats where values can be parsed deterministically.
 - Invoke party-member-validate for every active member after structure checks.
