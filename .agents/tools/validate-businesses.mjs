@@ -83,16 +83,31 @@ export function validateBusinesses(campaignRoot) {
       } else warnings.push(`${relative}: accounting setup incomplete`);
 
       const daily = fs.existsSync(dailyDir)
-        ? fs.readdirSync(dailyDir).filter((name) => /^\d+\.json$/.test(name)).sort((a, b) => Number.parseInt(a) - Number.parseInt(b))
+        ? fs.readdirSync(dailyDir)
+          .filter((name) => name.endsWith(".json"))
+          .map((name) => {
+            const match = /^(\d+)(?:-(\d+))?\.json$/.exec(name);
+            if (!match) { fail(`${name} must use <day>.json or <start>-<end>.json`); return null; }
+            const start = Number.parseInt(match[1]);
+            const end = match[2] ? Number.parseInt(match[2]) : start + 1;
+            if (end <= start) fail(`${name} range end must be greater than its start`);
+            if (match[2] && end - start < 2) fail(`${name} range ledger must span at least two skipped days`);
+            return { name, start, end, ranged: Boolean(match[2]) };
+          })
+          .filter(Boolean)
+          .sort((a, b) => a.start - b.start || a.end - b.end)
         : [];
       let expected = business.financial_start_day;
-      for (const name of daily) {
-        const day = Number.parseInt(name);
-        if (day !== expected) fail(`daily sequence expected Day ${expected}, found Day ${day}`);
-        expected = day + 1;
+      for (const { name, start, end, ranged } of daily) {
+        if (start !== expected) fail(`daily sequence expected Day ${expected}, found Day ${start}`);
+        expected = end;
         let record;
         try { record = JSON.parse(fs.readFileSync(path.join(dailyDir, name), "utf8")); } catch { continue; }
-        if (record.business_id !== entry.name || record.day !== day) fail(`${name} identity mismatch`);
+        if (record.business_id !== entry.name || record.day !== start) fail(`${name} identity mismatch`);
+        const dayCount = record.day_count ?? 1;
+        if (!Number.isSafeInteger(dayCount) || dayCount < 1) fail(`${name} day_count must be a positive safe integer`);
+        if (ranged && !("day_count" in record)) fail(`${name} range ledger requires day_count`);
+        if (dayCount !== end - start) fail(`${name} day_count does not match filename coverage`);
         const totals = record.totals;
         if (totals) {
           if (totals.net_income_cp !== totals.total_income_cp - totals.total_required_expenses_cp) fail(`${name} net income mismatch`);

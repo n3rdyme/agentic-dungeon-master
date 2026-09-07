@@ -19,6 +19,8 @@ Do not increment the day, apply long-rest recovery, finish the Daily, or rotate 
 
 Do not repeat the encounter check merely because an interrupted rest resumes. Check again only after the party abandons that attempt and begins a materially new overnight rest, such as at a different place or on a later night. Preserve the interrupted-rest status in `combat.md` and, when needed across chats, in `resume.md` so continuation does not grant recovery or reroll prematurely.
 
+When `time-advance` invokes this skill in compressed-boundary mode, use the safety rules above only to establish whether the first overnight completes. After it completes, return that established boundary to `time-advance` without reconciling a business, finishing or creating a Daily, changing `data/status.json`, applying recovery, or rotating `resume.md`. The parent workflow owns the single aggregated business reconciliation, range Daily, chronology update, and recovery transaction for the complete interval. If interrupted, leave compressed-boundary mode and resolve only consequences that actually occur.
+
 ## Complete the boundary
 
 If interrupted, persist only consequences that actually occurred and do not apply long-rest recovery until the rest is completed. Once the day boundary is reached:

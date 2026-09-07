@@ -239,7 +239,7 @@ The repository currently provides 57 skills. The tables below group them by huma
 | [`party-short-rest`](.agents/skills/party-short-rest/SKILL.md) | Resolve selected short-rest recovery without advancing the day |
 | [`party-long-rest`](.agents/skills/party-long-rest/SKILL.md) | Resolve sleep, recovery, safety, businesses, obligations, and one day boundary |
 | [`encounter-check`](.agents/skills/encounter-check/SKILL.md) | Check an unsecured overnight rest for a contextual hostile interruption |
-| [`time-advance`](.agents/skills/time-advance/SKILL.md) | Advance several days or a longer downtime interval while stopping for consequential events |
+| [`time-advance`](.agents/skills/time-advance/SKILL.md) | Advance two or more skipped nights in one compressed interval while stopping for consequential events |
 
 ### Combat and dice
 
@@ -306,7 +306,7 @@ The repository currently provides 57 skills. The tables below group them by huma
 | [`debt-show`](.agents/skills/debt-show/SKILL.md) | Show due, overdue, finite, recurring, reserved, and uncommitted financial totals |
 | [`business-create`](.agents/skills/business-create/SKILL.md) | Create a separately financed business after ownership is established |
 | [`business-update`](.agents/skills/business-update/SKILL.md) | Update authorized business operations, staffing, expenses, capital, or financing |
-| [`business-day-reconcile`](.agents/skills/business-day-reconcile/SKILL.md) | Close one financial day for every active business and report its signed result |
+| [`business-day-reconcile`](.agents/skills/business-day-reconcile/SKILL.md) | Close one financial day or compressed multi-day span for every active business and report its signed result |
 | [`business-status-show`](.agents/skills/business-status-show/SKILL.md) | Show separate business capital, earnings, expenses, staffing, and debts |
 | [`business-remove`](.agents/skills/business-remove/SKILL.md) | Archive a conclusively sold, closed, or terminated business and its accounting history |
 

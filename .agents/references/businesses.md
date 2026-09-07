@@ -7,13 +7,13 @@ Each business is a separate financial entity stored at `data/businesses/<busines
 - `Business.md` describes ownership, purpose, condition, reputation, operating cadence, low/average/peak traffic and earnings, external influences, and other material operating facts.
 - `business.json` owns current capital, cumulative totals, earnings rules, aggregate staffing costs, aggregate ordinary operating expenses, discretionary expenses, and setup completeness.
 - `debts.json` owns the business's capital loans and installment schedules.
-- `daily/<day>.json` is an immutable reconciliation for one campaign day.
+- `daily/<day>.json` is an immutable reconciliation for one ordinary campaign day. `daily/<start>-<end>.json` is one immutable compressed reconciliation for the half-open multi-day interval from `start` through `end`, covering `start` through `end - 1`.
 
 Store every amount as a nonnegative integer number of copper pieces in a field ending `_cp`. Use lowercase hyphenated stable IDs. Do not invent missing employees, wages, traffic, income, or costs. Put unknown required facts in `setup_gaps`, set `setup_complete` false, and do not reconcile the business until they are established.
 
 ## Earnings model
 
-An open earning opportunity uses exactly one authoritative `1d20` roll through `dice-roll`. A natural 1 is always low and a natural 20 is always peak. Otherwise add the day's established modifiers and compare the adjusted result to the business's structural thresholds:
+An ordinary open earning opportunity uses exactly one authoritative `1d20` roll through `dice-roll`. A natural 1 is always low and a natural 20 is always peak. Otherwise add the day's established modifiers and compare the adjusted result to the business's structural thresholds:
 
 - adjusted result at or below `low_max` is low;
 - adjusted result at or above `high_min` is peak;
@@ -24,6 +24,8 @@ Thresholds represent durable quality, reputation, and location. Daily modifiers 
 Each tier in `business.json` supplies established traffic, total income, and total variable expense. `Business.md` describes the activities and ordinary costs represented by those totals. The same activity result selects both sides: a busy day normally earns more and consumes more resources. Do not make a second roll for expenses. Daily income is the selected tier total plus any separately established guaranteed income.
 
 An established exceptional mismatch may add an explicit income or expense adjustment without changing the tier. Examples include donated refreshments, extraordinary cleaning, or a premium private booking with unusually low physical traffic. Never infer an adjustment merely to improve the result.
+
+For a multi-day interval compressed by `time-advance`, do not roll daily earnings. Use the business's `average` profile for every covered day and multiply its income and variable expense by `day_count`. Likewise multiply fixed daily staffing costs by `day_count`. Process scheduled operating expenses, debts, discretionary expenses, funding, and due-date advancement one covered day at a time in memory, then store their aggregate interval amounts in the single range ledger. If a closure, exceptional adjustment, shortage requiring a choice, or another material change prevents one average profile from representing the full interval, stop before that interruption rather than creating multiple ledgers for the requested advance.
 
 ## Daily expense allocation
 
@@ -37,7 +39,9 @@ Discretionary one-off expenses use `remaining_cp`, `start_day`, `due_day`, and `
 
 ## Daily record and totals
 
-Reconcile days sequentially and idempotently. Refuse to overwrite an existing daily record or skip a day. Each `daily/<day>.json` records opening capital, the earnings roll and modifiers (or the reason no roll occurred), selected traffic tier, profile income and variable expense totals, aggregate staffing and ordinary operating costs, discrete debt and discretionary expenses, explicit adjustments, totals, and closing capital.
+Reconcile chronology sequentially and idempotently. Refuse to overwrite an existing ledger, overlap an already covered day, or skip a day. Every new ledger includes `day` for its first covered day and `day_count` for the number of covered days. An ordinary `daily/<day>.json` has `day_count: 1`. A compressed `daily/<start>-<end>.json` has `day: <start>`, `day_count: <end> - <start>`, and covers Days `<start>` through `<end> - 1`; the filename's ending number is the resulting campaign Day, not an additional covered day. Historical single-day ledgers without `day_count` are interpreted as `day_count: 1` and remain immutable.
+
+Each ledger records opening capital, the earnings roll and modifiers (or the reason no roll occurred), selected traffic tier, profile income and variable expense totals, aggregate staffing and ordinary operating costs, discrete debt and discretionary expenses, explicit adjustments, totals, and closing capital. A compressed range ledger records no earnings roll, identifies the `average` tier, and stores aggregate amounts for the complete interval.
 
 - `net_income_cp = total_income_cp - total_required_expenses_cp`
 - `cash_flow_cp = total_income_cp - total_funded_expenses_cp`

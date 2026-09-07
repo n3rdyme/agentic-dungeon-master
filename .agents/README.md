@@ -68,7 +68,7 @@ are not gameplay actions and are unavailable during combat.
 
 ### Time, downtime, and sessions
 
-- [`time-advance`](skills/time-advance/SKILL.md) — Advances chronology across multiple days or longer downtime.
+- [`time-advance`](skills/time-advance/SKILL.md) — Advances chronology across two or more skipped nights using one compressed Daily and one range ledger per business.
   - Related skills: [`business-day-reconcile`](skills/business-day-reconcile/SKILL.md), [`debt-pay`](skills/debt-pay/SKILL.md), [`event-record`](skills/event-record/SKILL.md), [`party-long-rest`](skills/party-long-rest/SKILL.md)
   - References: [`businesses.md`](references/businesses.md), [`calendar.md`](references/calendar.md), [`debts.md`](references/debts.md)
 - [`session-end`](skills/session-end/SKILL.md) — Saves a complete operational checkpoint in `resume.md`.
@@ -92,7 +92,7 @@ are not gameplay actions and are unavailable during combat.
 - [`business-update`](skills/business-update/SKILL.md) — Updates established business operations, capital, staff, expenses, or financing, with explicit approval required before financial changes.
   - Related skills: [`business-create`](skills/business-create/SKILL.md), [`business-day-reconcile`](skills/business-day-reconcile/SKILL.md), [`business-remove`](skills/business-remove/SKILL.md)
   - References: [`businesses.md`](references/businesses.md)
-- [`business-day-reconcile`](skills/business-day-reconcile/SKILL.md) — Closes one financial day for every active business and prints its signed net result with gross income and expenses.
+- [`business-day-reconcile`](skills/business-day-reconcile/SKILL.md) — Closes one financial day or one compressed multi-day span for every active business and prints its signed net result with gross income and expenses.
   - Related skills: [`business-update`](skills/business-update/SKILL.md), [`dice-roll`](skills/dice-roll/SKILL.md), [`party-long-rest`](skills/party-long-rest/SKILL.md), [`time-advance`](skills/time-advance/SKILL.md)
   - References: [`businesses.md`](references/businesses.md)
 - [`business-status-show`](skills/business-status-show/SKILL.md) — Displays separate business capital, earnings, expenses, and debt without changing state.

@@ -92,7 +92,13 @@ for(const f of walk(path.join(q,"resolved"),".md")){
   else if(!/\b\d+\s*XP\b/i.test(xp[0][1]))errors.push(rel(f)+": Story XP field must contain a numeric XP amount");
 }
 if(fs.existsSync(path.join(root,["Magic","Items.md"].join(" "))))errors.push("legacy monolithic item ledger exists");
-if(fs.existsSync(path.join(root,"log/Daily"))&&!walk(path.join(root,"log/Daily"),".md").length)errors.push("log/Daily: no records");
+const dailyLogDir=path.join(root,"log/Daily"),dailyLogFiles=walk(dailyLogDir,".md");
+if(fs.existsSync(dailyLogDir)&&!dailyLogFiles.length)errors.push("log/Daily: no records");
+for(const f of dailyLogFiles){
+  const name=path.basename(f),match=/^(\d+)(?:-(\d+))? - (.+)\.md$/.exec(name);
+  if(!match){errors.push(rel(f)+": filename must use <day> - <Location>.md or <start>-<end> - <Location>.md");continue}
+  if(match[2]&&Number.parseInt(match[2])-Number.parseInt(match[1])<2)errors.push(rel(f)+": range Daily must span at least two skipped days");
+}
 const businesses=validateBusinesses(root);errors.push(...businesses.errors);warnings.push(...businesses.warnings);
 errors.forEach(x=>console.error("ERROR: "+x));warnings.forEach(x=>console.warn("WARNING: "+x));
 formatted.forEach(x=>console.log("FORMATTED: "+x));

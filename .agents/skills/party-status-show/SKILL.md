@@ -44,7 +44,7 @@ Business — <name>: <capital> capital; Day <last reconciled day> net <signed am
 
 Always show gp and sp, including zero values. Append `<Copper>cp` only when Copper is nonzero. Do not convert denominations.
 
-After Available Funds, add exactly one compact line for each active business in stable ID order. Read only its `business.json` and latest daily file. Use `Business — <name>: <capital> capital; Day <day> net <signed amount>`. Before the first reconciliation, replace the final clause with `not yet reconciled`. Append `; <amount> unfunded` when nonzero and `; setup incomplete` when false. Business capital is never included in Currency on Hand or Available Funds.
+After Available Funds, add exactly one compact line for each active business in stable ID order. Read only its `business.json` and latest ledger. For a one-day ledger, use `Business — <name>: <capital> capital; Day <day> net <signed amount>`. Treat a historical ledger without `day_count` as one day. For `day_count > 1`, use `Business — <name>: <capital> capital; Days <start>-<end> aggregate net <signed amount>`, where `<end> = <start> + day_count`. Before the first reconciliation, replace the final clause with `not yet reconciled`. Append `; <amount> unfunded` when nonzero and `; setup incomplete` when false. Business capital is never included in Currency on Hand or Available Funds.
 
 Then display present active members in `party.md` order using a level-two heading:
 
