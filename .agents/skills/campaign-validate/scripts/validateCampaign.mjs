@@ -71,8 +71,10 @@ const validateInactiveHub=(n,f)=>{
   if(!statusName){errors.push("party/"+n+".md: unindexed hub without Dead or Retired status");return}
   if(fs.existsSync(path.join(pd,n)))errors.push("party/"+n+": inactive member has active directory");
   if(!fs.existsSync(path.join(pd,"retired",n)))errors.push("party/retired/"+n+": missing archive for "+statusName.toLowerCase()+" member");
-  if(!new RegExp("\\([^)]*retired/"+n.replace(/[.*+?^${}()|[\]\\]/g,"\\$&")+"/[^)]+\\)","i").test(b))errors.push("party/"+n+".md: missing archived-file link");
-  if(statusName==="Retired"&&!new RegExp("\\([^)]*npcs/"+n.replace(/[.*+?^${}()|[\]\\]/g,"\\$&")+"\\.md(?:#[^)]*)?\\)","i").test(b))errors.push("party/"+n+".md: retired redirect missing NPC link");
+  const linkTargets=[...b.matchAll(/\[[^\]]+\]\(([^)]+)\)/g)].map(m=>decodeURIComponent(m[1].split("#",1)[0]).replace(/\\/g,"/"));
+  const archivePart=("retired/"+n+"/").toLowerCase(),npcPart=("npcs/"+n+".md").toLowerCase();
+  if(!linkTargets.some(t=>t.toLowerCase().includes(archivePart)))errors.push("party/"+n+".md: missing archived-file link");
+  if(statusName==="Retired"&&!linkTargets.some(t=>t.toLowerCase().endsWith(npcPart)))errors.push("party/"+n+".md: retired redirect missing NPC link");
 };
 if(fs.existsSync(pd))for(const e of fs.readdirSync(pd,{withFileTypes:true})){
   if(e.isDirectory()&&e.name!=="retired"&&!active.includes(e.name))errors.push("party/"+e.name+": unindexed directory");
