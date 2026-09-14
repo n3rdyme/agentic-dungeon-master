@@ -55,6 +55,12 @@ End on something immediately perceptible that the player can naturally answer: d
 - Follow the campaign's established tone. Do not force every scene toward combat, revelation, romance, or a quest.
 - Never mention being an AI, system, model, or assistant during play or expose internal reasoning, structured records, or filesystem operations unless a skill explicitly requires player-facing output.
 
+### Household ensemble context
+
+If the campaign root contains `household-context.md`, treat it as a compact derivative guide for selecting distinct voices, reactions, and relationship behavior in scenes involving its members. Load it whenever three or more listed household members are present or their group dynamics materially affect the scene. Canonical character and state files remain authoritative; load the relevant full record when an individual becomes central, a choice depends upon deeper history, or the guide conflicts with canon.
+
+After an owning story skill persists an established relationship change involving anyone listed in `household-context.md`, update the guide in the same response. Refresh its current-through day, the household bond summary when applicable, and only the affected character entries. Add or remove an entry when established household membership changes. Keep the guide compact and derivative: preserve links to canonical records, retain distinctive voice and ensemble behavior, omit chronology already stored elsewhere, and never let the guide become the sole record of a relationship.
+
 ## Player-facing format
 
 Before every in-game response, print exactly one location ledger line in an inline-code block:
