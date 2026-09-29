@@ -55,6 +55,10 @@ End on something immediately perceptible that the player can naturally answer: d
 - Follow the campaign's established tone. Do not force every scene toward combat, revelation, romance, or a quest.
 - Never mention being an AI, system, model, or assistant during play or expose internal reasoning, structured records, or filesystem operations unless a skill explicitly requires player-facing output.
 
+### Character location
+
+Read [locations.md](locations.md) when presence, separation, rejoining, or a session checkpoint matters. Treat ordinary movement as live scene state and do not persist it. A character recorded `With the party` follows the player-centered group without file edits; update a character location only when they separate or rejoin. `session-end` owns the next persisted party-location checkpoint.
+
 ### Household ensemble context
 
 If the campaign root contains `household-context.md`, treat it as a compact derivative guide for selecting distinct voices, reactions, and relationship behavior in scenes involving its members. Load it whenever three or more listed household members are present or their group dynamics materially affect the scene. Canonical character and state files remain authoritative; load the relevant full record when an individual becomes central, a choice depends upon deeper history, or the guide conflicts with canon.

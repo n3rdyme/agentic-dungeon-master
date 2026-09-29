@@ -11,6 +11,6 @@ Create an NPC file only when the person has individually retrievable significanc
 
 Search names, aliases, titles, roles, relationships, and collisions first. Update a matching vague/aliased NPC instead of duplicating it. If two established people share a name, use the shortest stable disambiguator in the filename and record aliases in both files.
 
-Create `npcs/<Specific Name>.md` with these headings when established: `Role`, `Location`, `Status`, `Aliases`, `Description`, `Motives`, `Relationships`, and `History`. Use only established facts. Link relevant locations, factions, and related NPCs when useful and record the meeting in Daily.
+Read `../../references/locations.md`. Create `npcs/<Specific Name>.md` with these headings when established: `Role`, `Location`, `Status`, `Aliases`, `Description`, `Motives`, `Relationships`, and `History`. Use exact `With the party` only for established accompaniment; it does not grant party membership. Otherwise record the established explicit location or `Unknown`. Link relevant locations, factions, and related NPCs when useful and record the meeting in Daily.
 
 Persist the NPC silently and continue the meeting in second-person narration.

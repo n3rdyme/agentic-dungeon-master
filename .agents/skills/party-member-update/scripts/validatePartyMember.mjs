@@ -18,6 +18,13 @@ function ordered(actual, required, label, errors, allowed=[]) {
 }
 export function validatePartyMember(root,name) {
   const dir=path.join(path.resolve(root),"party",name), errors=[], warnings=[];
+  const hub=path.join(path.resolve(root),"party",name+".md");
+  if (!fs.existsSync(hub)) errors.push("party/"+name+".md: missing hub");
+  else {
+    const locations=[...fs.readFileSync(hub,"utf8").matchAll(/^\*\*Location:\*\*\s*(.*?)\s*$/gm)].map(m=>m[1]);
+    if (locations.length!==1) errors.push("party/"+name+".md: expected exactly one **Location:** line");
+    else if (!locations[0]) errors.push("party/"+name+".md: Location must be nonempty");
+  }
   for (const f of ["Bio.md","Appearance.md","Personality.md","Knowledge.md","Stats.md","Equipment.md"])
     if (!fs.existsSync(path.join(dir,f))) errors.push("party/"+name+"/"+f+": missing");
   const sf=path.join(dir,"Stats.md");

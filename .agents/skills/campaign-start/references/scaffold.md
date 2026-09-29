@@ -93,7 +93,7 @@ Persist the generated location as canon:
 - `world/<Starting Location>.md`: region, settlement or site type, atmosphere, why the character is plausibly there, and two or three immediate tensions or opportunities. Do not predetermine the character's choices.
 
 - `party.md`: a link to the player character.
-- `party/<Player>.md`: navigation hub linking all five character detail files.
+- `party/<Player>.md`: navigation hub linking all five character detail files and containing exactly one `**Location:** With the party` line.
 - `party/<Player>/Bio.md`: approved identity, origin, background, and history; mark unspecified narrative details as unestablished.
 
 - `party/<Player>/Appearance.md`: approved description or explicitly unestablished details.
@@ -128,7 +128,7 @@ Before presenting the role menu, verify:
 
 5. All required directories and files exist; `Stats.md`, `Personality.md`, and the world-building-only `campaign-info.md` pass their strict template checks.
 
-6. The status location, world filename, world index link, party file, and Daily record agree exactly.
+6. The status location, world filename, world index link, party file, Daily record, and player hub's single `**Location:** With the party` line agree.
 
 7. `party-member-validate` returns **PASS**, or the player explicitly accepts every warning in **PASS WITH WARNINGS**.
 

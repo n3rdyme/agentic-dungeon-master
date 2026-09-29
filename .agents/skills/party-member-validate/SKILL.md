@@ -11,7 +11,7 @@ Perform a read-only audit. Never repair, normalize, or complete the character un
 
 1. Use the campaign active in this chat. If none is active, list campaign directories and ask the user to select one.
 2. Resolve `<character>` case-insensitively against active and retired party character hubs. Ask when absent or ambiguous; never guess.
-3. Read `data/status.json`, `data/inventory.json`, `data/party-state.json`, `homebrew.md` when present, the character hub, and all files in that character's directory.
+3. Read `data/status.json`, `data/inventory.json`, `data/party-state.json`, `homebrew.md` when present, `../../references/locations.md`, the character hub, and all files in that character's directory. Require exactly one nonempty `**Location:**` line in the hub.
 4. When the character's equipment claims a unique magic item or magical effect, read its linked `items/<Item>.md` file. If the equipment lacks a link, search `items` by exact item identity and report an absent definition.
 
 ### Staged creation, adoption, or level-up mode

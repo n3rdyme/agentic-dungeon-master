@@ -5,7 +5,7 @@ description: Display a compact read-only summary of the selected campaign's curr
 
 # Show Party Status
 
-Read the selected campaign's `data/status.json`, `data/party-state.json`, `party.md`, and each active member's `Stats.md`. Use the active scene and the minimum current canon needed to identify which active members are present, which active members were left behind, their last known locations, and any non-party NPCs currently traveling with the group. Read `../../references/party-state.md` for state ownership, `../../references/debts.md` for obligation calculations, `../../references/businesses.md` for separate business capital, and `../../references/calendar.md` for weekday handling. Do not read retired members, infer missing values, recover resources, or modify any file.
+Read the selected campaign's `data/status.json`, `data/party-state.json`, `party.md`, every active party hub, and each active member's `Stats.md`. Read `../../references/locations.md`, `../../references/party-state.md`, `../../references/debts.md`, `../../references/businesses.md`, and `../../references/calendar.md`. During play, use the live scene as the group location; otherwise use the status checkpoint. Resolve `With the party` as present, use explicit character locations as absent, and include non-party NPCs recorded `With the party`. Do not read retired members, infer missing values, recover resources, or modify any file.
 
 When the group is traveling or otherwise split, distinguish active party membership from current presence:
 
@@ -17,7 +17,7 @@ When the group is traveling or otherwise split, distinguish active party members
 
 - Do not treat a temporary traveling NPC as an active party member and do not add them to `party.md` or `data/party-state.json`.
 
-If current presence or an absent member's last known location is genuinely unclear, identify that conflict briefly rather than silently assuming everyone is together.
+If a hub lacks a location, an NPC's accompaniment is unclear, or an explicit location conflicts with the scene, identify that conflict briefly rather than silently assuming everyone is together.
 
 Use `Stats.md` for HP, Hit Die, spell-slot, and resource maxima. Use `data/party-state.json` for all current and remaining values. If required data is missing or inconsistent, identify the conflict briefly instead of silently repairing it.
 

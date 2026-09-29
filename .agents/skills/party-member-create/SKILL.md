@@ -30,7 +30,7 @@ Treat an explicit request to move quickly, guess, or choose for the player as Ge
 
 ## Resolve the build
 
-Read `homebrew.md`, `data/status.json`, the `party-member-update` templates, and the complete established character record when one exists.
+Read `homebrew.md`, `data/status.json`, `../../references/locations.md`, the `party-member-update` templates, and the complete established character record when one exists.
 
 Use the campaign's established rules baseline. For a new campaign, use strict 2024 Player's Handbook rules. State that baseline before choices begin and ask whether the player wants an exception or additional source. Treat every nonbaseline mechanic as homebrew until the player explicitly approves it and its exact rule is recorded in `homebrew.md`.
 
@@ -56,7 +56,7 @@ Set level-1 HP to the maximum class Hit Die plus Constitution modifier. For high
 
 ## Stage, approve, and validate
 
-Stage the hub and applicable canonical files owned by `party-member-update`: `Bio.md`, `Appearance.md`, `Personality.md`, `Knowledge.md`, `Stats.md`, `Equipment.md`, and `Custom Spells.md` only for applicable homebrew spells. Keep all currency in `data/status.json` and unused shared property in `data/inventory.json`.
+Stage the hub with exactly one `**Location:**` line and the applicable canonical files owned by `party-member-update`: `Bio.md`, `Appearance.md`, `Personality.md`, `Knowledge.md`, `Stats.md`, `Equipment.md`, and `Custom Spells.md` only for applicable homebrew spells. Use `With the party` only when current accompaniment is established; initial characters begin there. Keep all currency in `data/status.json` and unused shared property in `data/inventory.json`.
 
 For Initial and Direct creation, add currency actually granted by the approved starting package to party-wide status when the character is committed. For Adoption, preserve established possessions and do not grant a second starting package or create new currency merely because NPC mechanics are being rebuilt.
 

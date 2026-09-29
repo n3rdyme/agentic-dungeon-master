@@ -15,10 +15,10 @@ Player permission is not required to record a death that the rules and fiction h
 
 ## Archive the character
 
-Read `party.md`, `data/party-state.json`, the member hub and complete character directory, and the chronology establishing the death. Then perform one logical transition:
+Read `party.md`, `data/party-state.json`, `../../references/locations.md`, the member hub and complete character directory, and the chronology establishing the death. Then perform one logical transition:
 
 1. Move, never copy, `party/<Name>/` to `party/retired/<Name>/`.
-2. Replace `party/<Name>.md` with a concise memorial containing `**Status:** Dead`, the death day and cause when known, a brief character summary, and relative links to the archived files under `retired/<Name>/`.
+2. Replace `party/<Name>.md` with a concise memorial containing `**Status:** Dead`, the final established location, the death day and cause when known, a brief character summary, and relative links to the archived files under `retired/<Name>/`.
 3. Remove the member from the active roster in `party.md`.
 4. Use `party-state-update` to remove their exact entry from `data/party-state.json`.
 5. Preserve their equipment in the archive. Do not silently loot, distribute, sell, or transfer possessions or currency.

@@ -9,6 +9,7 @@ Resolve the member from party.md. When explicitly invoked by `party-member-creat
 
 ## Canonical owners
 
+- `party/<Name>.md`: navigation hub and exactly one `**Location:**` line. Read `../../references/locations.md`; change location only for established separation or rejoining, never ordinary party movement.
 - Bio.md: identity, origin, background, history.
 - Appearance.md: durable physical appearance.
 - Personality.md: one-line party association, roleplay identity, behavior, speech, ideals, relationships, blind spots, and defining moments. Party association records the agreed ongoing alliance without permanent disclaimers about unestablished commitments. Record broader commitments as current state: do not infer them from membership, require repetitive confirmation after a broad commitment is established, or prevent later development.

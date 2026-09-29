@@ -1,6 +1,6 @@
 # Canonical transient party state
 
-`data/party-state.json` is the sole authority for transient character mechanics. `Stats.md` owns permanent maxima and derived mechanics. Never duplicate currency, XP, level, inventory, biography, or narrative chronology here.
+`data/party-state.json` is the sole authority for transient character mechanics. `Stats.md` owns permanent maxima and derived mechanics. Character location follows [locations.md](locations.md) and is never stored here. Never duplicate currency, XP, level, inventory, biography, or narrative chronology here.
 
 Use this shape, adding character-specific slot levels and resources as needed:
 

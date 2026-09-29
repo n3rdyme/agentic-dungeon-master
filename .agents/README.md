@@ -64,7 +64,7 @@ are not gameplay actions and are unavailable during combat.
 
 - [`story-rules-apply`](skills/story-rules-apply/SKILL.md) — Reloads and reapplies narration, agency, and combat-transition rules for the active Story role.
   - Related skills: [`campaign-open`](skills/campaign-open/SKILL.md)
-  - References: [`story-mode-rules.md`](references/story-mode-rules.md)
+  - References: [`locations.md`](references/locations.md), [`story-mode-rules.md`](references/story-mode-rules.md)
 
 ### Time, downtime, and sessions
 
@@ -73,10 +73,10 @@ are not gameplay actions and are unavailable during combat.
   - References: [`businesses.md`](references/businesses.md), [`calendar.md`](references/calendar.md), [`debts.md`](references/debts.md)
 - [`session-end`](skills/session-end/SKILL.md) — Saves a complete operational checkpoint in `resume.md`.
   - Related skills: [`poker-play`](skills/poker-play/SKILL.md)
-  - References: [`calendar.md`](references/calendar.md), [`debts.md`](references/debts.md), [`party-state.md`](references/party-state.md)
+  - References: [`calendar.md`](references/calendar.md), [`debts.md`](references/debts.md), [`locations.md`](references/locations.md), [`party-state.md`](references/party-state.md)
 - [`session-resume`](skills/session-resume/SKILL.md) — Restores current campaign state from its saved checkpoint.
   - Related skills: [`combat-finish`](skills/combat-finish/SKILL.md), [`party-state-initialize`](skills/party-state-initialize/SKILL.md), [`poker-play`](skills/poker-play/SKILL.md), [`quest-update`](skills/quest-update/SKILL.md)
-  - References: [`calendar.md`](references/calendar.md), [`debts.md`](references/debts.md), [`party-state.md`](references/party-state.md)
+  - References: [`calendar.md`](references/calendar.md), [`debts.md`](references/debts.md), [`locations.md`](references/locations.md), [`party-state.md`](references/party-state.md)
 - [`party-long-rest`](skills/party-long-rest/SKILL.md) — Resolves overnight rest, recovery, safety, and a day boundary.
   - Related skills: [`business-day-reconcile`](skills/business-day-reconcile/SKILL.md), [`combat-start`](skills/combat-start/SKILL.md), [`encounter-check`](skills/encounter-check/SKILL.md), [`party-state-update`](skills/party-state-update/SKILL.md), [`session-end`](skills/session-end/SKILL.md)
   - References: [`businesses.md`](references/businesses.md), [`calendar.md`](references/calendar.md), [`debts.md`](references/debts.md), [`party-state.md`](references/party-state.md)
@@ -118,8 +118,10 @@ are not gameplay actions and are unavailable during combat.
 
 - [`npc-meet`](skills/npc-meet/SKILL.md) — Creates canonical records for individually significant NPCs.
   - Related skills: [`faction-update`](skills/faction-update/SKILL.md), [`location-update`](skills/location-update/SKILL.md)
+  - References: [`locations.md`](references/locations.md)
 - [`npc-update`](skills/npc-update/SKILL.md) — Persists durable changes to an existing NPC.
   - Related skills: [`party-member-adopt`](skills/party-member-adopt/SKILL.md)
+  - References: [`locations.md`](references/locations.md)
 - [`faction-update`](skills/faction-update/SKILL.md) — Creates or updates durable faction state and relationships.
 
 ### Games and cards
@@ -186,16 +188,20 @@ are not gameplay actions and are unavailable during combat.
 
 - [`party-member-adopt`](skills/party-member-adopt/SKILL.md) — Promotes an NPC with an authentically agreed ongoing party alliance while preserving evolving NPC agency and current commitments.
   - Related skills: [`milestone-record`](skills/milestone-record/SKILL.md), [`party-member-create`](skills/party-member-create/SKILL.md), [`party-member-retire`](skills/party-member-retire/SKILL.md), [`party-state-update`](skills/party-state-update/SKILL.md)
+  - References: [`locations.md`](references/locations.md)
 - [`party-member-create`](skills/party-member-create/SKILL.md) — Builds, approves, validates, and adds one complete party character.
   - Related skills: [`campaign-start`](skills/campaign-start/SKILL.md), [`milestone-record`](skills/milestone-record/SKILL.md), [`party-member-adopt`](skills/party-member-adopt/SKILL.md), [`party-member-update`](skills/party-member-update/SKILL.md), [`party-member-validate`](skills/party-member-validate/SKILL.md), [`party-state-update`](skills/party-state-update/SKILL.md)
+  - References: [`locations.md`](references/locations.md)
 - [`party-member-death`](skills/party-member-death/SKILL.md) — Archives a permanently dead member and leaves a linked memorial.
   - Related skills: [`combat-finish`](skills/combat-finish/SKILL.md), [`event-record`](skills/event-record/SKILL.md), [`milestone-record`](skills/milestone-record/SKILL.md), [`party-state-update`](skills/party-state-update/SKILL.md)
+  - References: [`locations.md`](references/locations.md)
 - [`party-member-update`](skills/party-member-update/SKILL.md) — Persists established permanent or narrative character changes.
   - Related skills: [`party-level-up`](skills/party-level-up/SKILL.md), [`party-member-adopt`](skills/party-member-adopt/SKILL.md), [`party-member-create`](skills/party-member-create/SKILL.md), [`party-member-validate`](skills/party-member-validate/SKILL.md), [`party-state-update`](skills/party-state-update/SKILL.md)
-  - References: [`custom-spells-template.md`](skills/party-member-update/references/custom-spells-template.md), [`personality-template.md`](skills/party-member-update/references/personality-template.md), [`stats-template.md`](skills/party-member-update/references/stats-template.md)
+  - References: [`locations.md`](references/locations.md), [`custom-spells-template.md`](skills/party-member-update/references/custom-spells-template.md), [`personality-template.md`](skills/party-member-update/references/personality-template.md), [`stats-template.md`](skills/party-member-update/references/stats-template.md)
   - Tools: [`validatePartyMember.mjs`](skills/party-member-update/scripts/validatePartyMember.mjs)
 - [`party-member-retire`](skills/party-member-retire/SKILL.md) — Returns a living member to canonical NPC status with player consent.
   - Related skills: [`event-record`](skills/event-record/SKILL.md), [`milestone-record`](skills/milestone-record/SKILL.md), [`party-member-adopt`](skills/party-member-adopt/SKILL.md), [`party-member-death`](skills/party-member-death/SKILL.md), [`party-state-update`](skills/party-state-update/SKILL.md)
+  - References: [`locations.md`](references/locations.md)
 - [`party-xp-award`](skills/party-xp-award/SKILL.md) — Awards an established amount of noncombat story XP.
   - Related skills: [`party-level-up`](skills/party-level-up/SKILL.md), [`quest-complete`](skills/quest-complete/SKILL.md)
 - [`party-level-up`](skills/party-level-up/SKILL.md) — Advances and validates active characters one at a time.
@@ -221,7 +227,7 @@ are not gameplay actions and are unavailable during combat.
   - Tools: [`rollDice.js`](skills/combat-fight/scripts/rollDice.js)
 - [`party-status-show`](skills/party-status-show/SKILL.md) — Displays present party mechanics, absent members' locations, and accompanying NPCs without changing state.
   - Related skills: [`business-status-show`](skills/business-status-show/SKILL.md), [`combat-fight`](skills/combat-fight/SKILL.md), [`debt-show`](skills/debt-show/SKILL.md)
-  - References: [`businesses.md`](references/businesses.md), [`calendar.md`](references/calendar.md), [`debts.md`](references/debts.md), [`party-state.md`](references/party-state.md)
+  - References: [`businesses.md`](references/businesses.md), [`calendar.md`](references/calendar.md), [`debts.md`](references/debts.md), [`locations.md`](references/locations.md), [`party-state.md`](references/party-state.md)
 - [`party-spells-show`](skills/party-spells-show/SKILL.md) — Displays party spell lists, current slots, and brief mechanical summaries without changing state.
   - Related skills: [`combat-fight`](skills/combat-fight/SKILL.md)
   - References: [`party-state.md`](references/party-state.md)
@@ -240,24 +246,24 @@ every role.
 
 - [`campaign-start`](skills/campaign-start/SKILL.md) — Creates and scaffolds a new validated level-1 campaign.
   - Related skills: [`campaign-open`](skills/campaign-open/SKILL.md), [`party-member-create`](skills/party-member-create/SKILL.md), [`party-member-update`](skills/party-member-update/SKILL.md), [`party-member-validate`](skills/party-member-validate/SKILL.md), [`session-end`](skills/session-end/SKILL.md), [`session-resume`](skills/session-resume/SKILL.md)
-  - References: [`calendar.md`](references/calendar.md), [`campaign-info.md`](references/campaign-info.md), [`party-state.md`](references/party-state.md), [`scaffold.md`](skills/campaign-start/references/scaffold.md)
+  - References: [`calendar.md`](references/calendar.md), [`campaign-info.md`](references/campaign-info.md), [`locations.md`](references/locations.md), [`party-state.md`](references/party-state.md), [`scaffold.md`](skills/campaign-start/references/scaffold.md)
 - [`campaign-open`](skills/campaign-open/SKILL.md) — Opens an existing campaign from unambiguous intent, prompts only for missing choices, and provides campaign-entry help for a bare `help` request.
   - Related skills: [`campaign-start`](skills/campaign-start/SKILL.md), [`combat-fight`](skills/combat-fight/SKILL.md), [`combat-finish`](skills/combat-finish/SKILL.md), [`combat-start`](skills/combat-start/SKILL.md), [`debt-create`](skills/debt-create/SKILL.md), [`debt-pay`](skills/debt-pay/SKILL.md), [`debt-resolve`](skills/debt-resolve/SKILL.md), [`debt-show`](skills/debt-show/SKILL.md), [`debt-update`](skills/debt-update/SKILL.md), [`dice-roll`](skills/dice-roll/SKILL.md), [`party-member-adopt`](skills/party-member-adopt/SKILL.md), [`party-member-death`](skills/party-member-death/SKILL.md), [`party-member-retire`](skills/party-member-retire/SKILL.md), [`party-spells-show`](skills/party-spells-show/SKILL.md), [`party-status-show`](skills/party-status-show/SKILL.md), [`session-resume`](skills/session-resume/SKILL.md)
   - References: [`battle.md`](skills/campaign-open/references/battle.md), [`campaign-information.md`](skills/campaign-open/references/campaign-information.md), [`continue-story.md`](skills/campaign-open/references/continue-story.md), [`story-mode-rules.md`](references/story-mode-rules.md)
 - [`campaign-import`](skills/campaign-import/SKILL.md) — Reconstructs campaign canon from a conversation export.
   - Related skills: [`campaign-start`](skills/campaign-start/SKILL.md), [`debt-create`](skills/debt-create/SKILL.md), [`debt-pay`](skills/debt-pay/SKILL.md), [`debt-resolve`](skills/debt-resolve/SKILL.md), [`debt-update`](skills/debt-update/SKILL.md), [`event-record`](skills/event-record/SKILL.md), [`faction-update`](skills/faction-update/SKILL.md), [`item-identify`](skills/item-identify/SKILL.md), [`item-loot`](skills/item-loot/SKILL.md), [`location-discover`](skills/location-discover/SKILL.md), [`location-update`](skills/location-update/SKILL.md), [`milestone-record`](skills/milestone-record/SKILL.md), [`npc-meet`](skills/npc-meet/SKILL.md), [`npc-update`](skills/npc-update/SKILL.md), [`party-member-death`](skills/party-member-death/SKILL.md), [`party-member-retire`](skills/party-member-retire/SKILL.md), [`party-member-update`](skills/party-member-update/SKILL.md), [`party-xp-award`](skills/party-xp-award/SKILL.md), [`quest-complete`](skills/quest-complete/SKILL.md), [`quest-receive`](skills/quest-receive/SKILL.md), [`quest-update`](skills/quest-update/SKILL.md)
-  - References: [`calendar.md`](references/calendar.md), [`campaign-info.md`](references/campaign-info.md), [`debts.md`](references/debts.md), [`party-state.md`](references/party-state.md), [`historical-reconciliation.md`](skills/campaign-import/references/historical-reconciliation.md)
+  - References: [`calendar.md`](references/calendar.md), [`campaign-info.md`](references/campaign-info.md), [`debts.md`](references/debts.md), [`locations.md`](references/locations.md), [`party-state.md`](references/party-state.md), [`historical-reconciliation.md`](skills/campaign-import/references/historical-reconciliation.md)
   - Tools: [`readConversation.mjs`](tools/readConversation.mjs), [`validateImport.mjs`](skills/campaign-import/scripts/validateImport.mjs), [`validatePartyMember.mjs`](skills/party-member-update/scripts/validatePartyMember.mjs)
 
 ### Campaign support
 
 - [`campaign-validate`](skills/campaign-validate/SKILL.md) — Repairs unambiguous stale links, then audits complete campaign structure and cross-file consistency.
   - Related skills: [`campaign-start`](skills/campaign-start/SKILL.md), [`party-member-update`](skills/party-member-update/SKILL.md), [`party-member-validate`](skills/party-member-validate/SKILL.md)
-  - References: [`businesses.md`](references/businesses.md), [`calendar.md`](references/calendar.md), [`campaign-info.md`](references/campaign-info.md), [`debts.md`](references/debts.md), [`campaign-checklist.md`](skills/campaign-validate/references/campaign-checklist.md), [`link-repair.md`](skills/campaign-validate/references/link-repair.md)
+  - References: [`businesses.md`](references/businesses.md), [`calendar.md`](references/calendar.md), [`campaign-info.md`](references/campaign-info.md), [`debts.md`](references/debts.md), [`locations.md`](references/locations.md), [`campaign-checklist.md`](skills/campaign-validate/references/campaign-checklist.md), [`link-repair.md`](skills/campaign-validate/references/link-repair.md)
   - Tools: [`markdown-format.mjs`](tools/markdown-format.mjs), [`validate-markdown-links.cjs`](tools/validate-markdown-links.cjs), [`validate-businesses.mjs`](tools/validate-businesses.mjs), [`validateCampaign.mjs`](skills/campaign-validate/scripts/validateCampaign.mjs), [`validatePartyMember.mjs`](skills/party-member-update/scripts/validatePartyMember.mjs)
 - [`party-member-validate`](skills/party-member-validate/SKILL.md) — Audits character completeness, mechanics, and rules legality.
   - Related skills: [`party-level-up`](skills/party-level-up/SKILL.md), [`party-member-adopt`](skills/party-member-adopt/SKILL.md), [`party-member-create`](skills/party-member-create/SKILL.md), [`party-member-update`](skills/party-member-update/SKILL.md)
-  - References: [`audit-checklist.md`](skills/party-member-validate/references/audit-checklist.md)
+  - References: [`locations.md`](references/locations.md), [`audit-checklist.md`](skills/party-member-validate/references/audit-checklist.md)
   - Tools: [`validatePartyMember.mjs`](skills/party-member-update/scripts/validatePartyMember.mjs)
 - [`party-state-initialize`](skills/party-state-initialize/SKILL.md) — Creates or repairs canonical transient party state.
   - References: [`party-state.md`](references/party-state.md)

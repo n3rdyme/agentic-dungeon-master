@@ -16,7 +16,7 @@ Require:
 
 Use a bare player name as the exact child directory name under `campaigns/`; do not add a suffix. Apply the same safe-name rules as `campaign-start`. Refuse to overwrite an existing campaign unless it contains `data/import-bookmark.json` for the same conversation file; in that case resume the interrupted import.
 
-Do not read canon from other campaigns. Read `../campaign-start/references/scaffold.md`, `../../references/party-state.md`, `../../references/calendar.md`, and `../../references/campaign-info.md` before creating files. Read the full `party-member-update` skill and its Stats, Personality, and custom-spell templates before creating party files. Read `references/historical-reconciliation.md` before processing the first day.
+Do not read canon from other campaigns. Read `../campaign-start/references/scaffold.md`, `../../references/party-state.md`, `../../references/locations.md`, `../../references/calendar.md`, and `../../references/campaign-info.md` before creating files. Read the full `party-member-update` skill and its Stats, Personality, and custom-spell templates before creating party files. Read `references/historical-reconciliation.md` before processing the first day.
 
 ## Create the import scaffold
 
@@ -28,7 +28,7 @@ Create the scaffold directories and files before reading conversation content. U
 - `data/import-bookmark.json`: conversation filename, Bookmark `"0"`, Day `1000`, and Complete `false`;
 - `homebrew.md`, `party.md`, `world.md`, and `resume.md` with concise headings and explicit unestablished/import-in-progress text;
 - `campaign-info.md` using the immutable campaign-info template; populate only source-established world-building permissions and prohibitions, plus the player name when known; never place party composition, relationships, current state, or inferred story direction there;
-- `party/<Player>.md` plus `Bio.md`, `Appearance.md`, `Personality.md`, `Knowledge.md`, `Stats.md`, and `Equipment.md` placeholders that already conform to the strict templates; create `Custom Spells.md` only when needed; and
+- `party/<Player>.md` with exactly one `**Location:** With the party` line, plus `Bio.md`, `Appearance.md`, `Personality.md`, `Knowledge.md`, `Stats.md`, and `Equipment.md` placeholders that already conform to the strict templates; create `Custom Spells.md` only when needed; and
 - `.gitkeep` files in otherwise empty `party/retired`, `npcs`, `factions`, `items`, `quests/active`, `quests/resolved`, `log/Daily`, `log/Events`, `log/Combat`, and `log/Milestones` directories.
 
 Do not create `world/Unknown.md`, a fake Day log, or invented character data. Replace placeholders only when the conversation establishes facts.
@@ -92,7 +92,7 @@ After the Daily entry is complete, reconcile the campaign from that ledger and t
 
 - Build the day's typed consequence queue and route every party-member change through `party-member-update`; route every other entry through the applicable canonical skill listed in `references/historical-reconciliation.md`. Load each applicable skill's full `SKILL.md` before writing that entity type. Apply its schema and lifecycle rules in historical-import mode; do not imitate those rules independently.
 
-- Keep party-wide level, XP, currency, day, location, and active debts in `data/status.json`. Read `../../references/debts.md`; route established unpaid obligations through `debt-create`, payments through `debt-pay`, revised terms through `debt-update`, and nonpayment terminal outcomes through `debt-resolve` in historical-import mode. Never import a quote as debt.
+- Keep party-wide level, XP, currency, day, saved group location, and active debts in `data/status.json`. Normalize character locations according to `../../references/locations.md`; historical routine travel changes only the saved group checkpoint, while established separation or rejoining changes the individual character record. Read `../../references/debts.md`; route established unpaid obligations through `debt-create`, payments through `debt-pay`, revised terms through `debt-update`, and nonpayment terminal outcomes through `debt-resolve` in historical-import mode. Never import a quote as debt.
 - Keep transient mechanics only in `data/party-state.json`; keep maxima and permanent mechanics in each character's `Stats.md`.
 - Put items explicitly assigned for a character's ongoing personal use, wearing, wielding, preparation, attunement, or ready combat access in that character's `Equipment.md`; put other party property in `data/inventory.json`. A character merely picking up, pocketing, packing, or transporting loot does not establish personal assignment.
 - Create or update character identity, biography, appearance, personality, and relationships only from established facts.

@@ -23,7 +23,7 @@ Trim surrounding whitespace from the character name but do not otherwise rewrite
 
 ## Build the campaign
 
-Read `references/scaffold.md` and `../../references/campaign-info.md` completely. The scaffold delegates character-file creation to `party-member-update` templates and world-building contract creation to the shared campaign-information template. Follow its exact directory, initial state, world-generation, randomness, and verification rules.
+Read `references/scaffold.md`, `../../references/campaign-info.md`, and `../../references/locations.md` completely. The scaffold delegates character-file creation to `party-member-update` templates and world-building contract creation to the shared campaign-information template. Follow its exact directory, initial state, world-generation, randomness, and verification rules.
 
 Keep generation campaign-agnostic. Never copy or reuse an existing campaign's setting or treat any existing campaign as a template. Existing campaign names and top-level location filenames may be checked only to avoid accidentally reusing names.
 

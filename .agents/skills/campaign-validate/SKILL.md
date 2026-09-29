@@ -5,7 +5,7 @@ description: Repair unambiguous stale Markdown links, deterministically normaliz
 
 # Validate Campaign
 
-Repair broken Markdown links only through the evidence-bound workflow in `references/link-repair.md`, normalize Markdown spacing only through `../../tools/markdown-format.mjs`, then audit without any other modification or repair. Read `references/link-repair.md`, `../campaign-start/references/scaffold.md`, `references/campaign-checklist.md`, `../../references/debts.md`, and `../../references/calendar.md` completely. Also read the shared `../../references/campaign-info.md` contract before validating its structure.
+Repair broken Markdown links only through the evidence-bound workflow in `references/link-repair.md`, normalize Markdown spacing only through `../../tools/markdown-format.mjs`, then audit without any other modification or repair. Read `references/link-repair.md`, `../campaign-start/references/scaffold.md`, `references/campaign-checklist.md`, `../../references/debts.md`, `../../references/calendar.md`, and `../../references/locations.md` completely. Also read the shared `../../references/campaign-info.md` contract before validating its structure.
 
 Run from the repository root:
 

@@ -22,7 +22,7 @@ Never manufacture consent, reinterpret temporary cooperation as an ongoing allia
 
 ## Prepare the party member
 
-Read `party.md`, `data/status.json`, `data/party-state.json`, `homebrew.md`, the NPC's complete canonical record, and relevant relationship files. Search for an existing active or retired party record before creating anything. Adoption always requires explicit player consent, including readoption of a previously retired member.
+Read `party.md`, `data/status.json`, `data/party-state.json`, `homebrew.md`, `../../references/locations.md`, the NPC's complete canonical record, and relevant relationship files. Search for an existing active or retired party record before creating anything. Adoption always requires explicit player consent, including readoption of a previously retired member.
 
 ### Restore a retired member
 
@@ -41,7 +41,7 @@ When no retired record exists, invoke `party-member-create` in Adoption context 
 ## Validate and commit
 
 1. Require `party-member-create` to return an explicitly approved staged record with a passing `party-member-validate` result.
-2. Require exactly one `**Party Association:**` line in the staged `Personality.md`. Summarize the NPC's authentically agreed ongoing alliance in one sentence. Do not append disclaimers about unestablished travel, adventuring, or scene participation; track their current scope elsewhere only when it is relevant and established.
+2. Require exactly one `**Party Association:**` line in the staged `Personality.md` and one `**Location:**` line in the staged party hub. Preserve the NPC's established location; adoption alone does not establish `With the party`.
 3. Derive transient mechanics from the NPC's established current condition. Do not grant healing, recovery, spell slots, Hit Dice, or resources merely because the NPC joins.
 4. Stage an exact new-character entry for `data/party-state.json` and validate it through `party-state-update`.
 5. Add the member to `party.md`, commit the staged hub and directory, and apply the party-state transaction as one adoption boundary.

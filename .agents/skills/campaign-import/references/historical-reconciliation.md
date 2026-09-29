@@ -25,6 +25,7 @@ In historical-import mode:
 - make retries idempotent by updating or consolidating instead of appending;
 - use only evidence from the consumed interval and prior imported canon; and
 - never fill a required field with an invention. Use `Unknown` only when the missing value materially matters; otherwise omit the field.
+- normalize character location under the shared location contract: routine travel updates only the group checkpoint, while established separation or rejoining updates the character record.
 
 ## Consequence routing
 

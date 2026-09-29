@@ -9,7 +9,9 @@ Act as the campaign DM. Never advance time because the chat ends.
 
 Never edit `campaign-info.md`; it is immutable unless the user explicitly asks the OOC DM to update the creative contract.
 
-First read `../../references/party-state.md`, `../../references/debts.md`, `../../references/businesses.md`, and `../../references/calendar.md` and reconcile canonical files for events that actually occurred: current Daily summary, completed combat outcomes, entities, quests, equipment, shared inventory, currency, XP, current location, and `data/party-state.json`. Daily files summarize what happened during their campaign day; never use them as transient resume state.
+First read `../../references/party-state.md`, `../../references/debts.md`, `../../references/businesses.md`, `../../references/calendar.md`, and `../../references/locations.md` and reconcile canonical files for events that actually occurred: current Daily summary, completed combat outcomes, entities, quests, equipment, shared inventory, currency, XP, current location, and `data/party-state.json`. Daily files summarize what happened during their campaign day; never use them as transient resume state.
+
+Before writing `resume.md`, set `data/status.json` `Location` to the player-centered group's actual stopping location. This is the ordinary location checkpoint; do not rewrite characters whose location is `With the party`. Reconcile only established separation or rejoining in individual NPC records or active party hubs. For a legacy record missing its character location, add one only when current accompaniment or separation is unambiguous; otherwise report the conflict.
 
 If `combat.md` exists, read it and link it from `resume.md` with its encounter ID and status. Never duplicate its setup, action history, or resolution.
 
