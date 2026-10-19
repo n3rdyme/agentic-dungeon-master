@@ -31,14 +31,14 @@ Never overwrite a ledger, cover the same campaign day twice, reconcile beyond an
 
 After a successful reconciliation, print one concise line per business in stable business-ID order:
 
-`<business name> <signed net> (<gross>-<expenses>)`
+`<business name> <signed net> (<closing cash on hand>)`
 
-Use `totals.net_income_cp` for the signed net, `totals.total_income_cp` for gross, and `totals.total_required_expenses_cp` for expenses. Format each amount as compact `gp`, `sp`, and `cp` denominations, omitting zero denominations unless the complete amount is zero. Prefix a positive net with `+`, a negative net with `-`, and render zero as `+0gp`. Put no spaces around the subtraction hyphen inside the parentheses.
+Use `totals.net_income_cp` for the signed net and `closing_cp` for the resulting business cash on hand inside the parentheses. Format each amount as compact `gp`, `sp`, and `cp` denominations, omitting zero denominations unless the complete amount is zero. Prefix a positive net with `+`, a negative net with `-`, and render zero as `+0gp`. Render closing cash without a sign.
 
 Example:
 
-`Sample Business +12gp (40gp-28gp)`
+`Sample Business +12gp (152gp)`
 
-For a compressed interval, the amounts in this line are the aggregate range totals, not per-day averages.
+For a compressed interval, the signed net is the aggregate range total and the parenthetical amount is the business's closing cash after the complete interval.
 
 When invoked inside `party-long-rest` or `time-advance`, return these lines to the parent workflow and require it to include them in the player-facing day-end, waking, or time-advance response. The result lines are required even though the nested skill announcement is suppressed.
