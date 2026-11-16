@@ -1,0 +1,8 @@
+{
+  "name": "agentic-dnd-html-render",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "puppeteer": "^25.17.0"
+  }
+}

@@ -1,0 +1,4 @@
+interface:
+  display_name: "HTML Render"
+  short_description: "Render local HTML files to PNG images"
+  default_prompt: "Use $html-render to turn a local HTML file into a PNG image."

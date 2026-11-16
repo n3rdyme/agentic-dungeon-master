@@ -222,6 +222,8 @@ are not gameplay actions and are unavailable during combat.
 
 ## Shared utility skills
 
+- [`html-render`](skills/html-render/SKILL.md) — Renders a local HTML document or fragment to a PNG image with Puppeteer.
+  - Tools: [`html-to-png.mjs`](skills/html-render/scripts/html-to-png.mjs)
 - [`dice-roll`](skills/dice-roll/SKILL.md) — Executes campaign-scoped dice requests and logs authoritative results.
   - Related skills: [`combat-fight`](skills/combat-fight/SKILL.md)
   - Tools: [`rollDice.js`](skills/combat-fight/scripts/rollDice.js)
